@@ -1,3 +1,7 @@
+// Copyright 2022, DragonflyDB authors.  All rights reserved.
+// See LICENSE for licensing terms.
+//
+
 #pragma once
 
 #include <cstdint>
@@ -26,7 +30,6 @@ class StringSet : public DenseSet {
   void Clear();
 
   std::optional<std::string> Pop();
-  sds PopRaw();
 
   ~StringSet() {
     Clear();

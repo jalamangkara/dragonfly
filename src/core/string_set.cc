@@ -158,10 +158,6 @@ std::optional<std::string> StringSet::Pop() {
   return ret;
 }
 
-sds StringSet::PopRaw() {
-  return (sds)PopInternal();
-}
-
 uint32_t StringSet::Scan(uint32_t cursor, const std::function<void(const sds)>& func) const {
   return DenseSet::Scan(cursor, [func](const void* ptr) { func((sds)ptr); });
 }
